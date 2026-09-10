@@ -1,5 +1,5 @@
 
 package model;
-public class Tank {
+public class Tank extends SuperDefence implements Observable{
     
 }

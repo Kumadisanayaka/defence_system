@@ -1,5 +1,5 @@
 
 package model;
-public class Helicopter {
+public class Helicopter extends SuperDefence implements Observable{
     
 }
