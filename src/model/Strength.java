@@ -1,5 +1,6 @@
 
 package model;
-public class Strength {
-    
+
+public enum Strength {
+    LOW,MEDIUM,HIGH,STRONG,CLOSED;   
 }
