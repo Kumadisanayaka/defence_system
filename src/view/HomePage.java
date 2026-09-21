@@ -65,16 +65,31 @@ public class HomePage extends javax.swing.JFrame {
         helicopterbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         helicopterbtn.setForeground(new java.awt.Color(255, 255, 255));
         helicopterbtn.setText("Helicopter");
+        helicopterbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helicopterbtnActionPerformed(evt);
+            }
+        });
 
         tankbtn.setBackground(new java.awt.Color(0, 102, 102));
         tankbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tankbtn.setForeground(new java.awt.Color(255, 255, 255));
         tankbtn.setText("Tank");
+        tankbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tankbtnActionPerformed(evt);
+            }
+        });
 
         submarianbtn.setBackground(new java.awt.Color(0, 102, 102));
         submarianbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         submarianbtn.setForeground(new java.awt.Color(255, 255, 255));
         submarianbtn.setText("Submarian");
+        submarianbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submarianbtnActionPerformed(evt);
+            }
+        });
 
         exitbtn.setBackground(new java.awt.Color(204, 0, 0));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -87,29 +102,31 @@ public class HomePage extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(mainControllerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(helicopterbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tankbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(submarianbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(64, 64, 64))))
+                        .addGap(97, 97, 97))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, Short.MAX_VALUE)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(mainControllerbtn)
                 .addGap(18, 18, 18)
                 .addComponent(helicopterbtn)
@@ -117,7 +134,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(tankbtn)
                 .addGap(18, 18, 18)
                 .addComponent(submarianbtn)
-                .addGap(45, 45, 45)
+                .addGap(54, 54, 54)
                 .addComponent(exitbtn)
                 .addGap(24, 24, 24))
         );
@@ -126,7 +143,7 @@ public class HomePage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,6 +157,21 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new MainView().setVisible(true);
     }//GEN-LAST:event_mainControllerbtnActionPerformed
+
+    private void helicopterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helicopterbtnActionPerformed
+        // TODO add your handling code here:
+        new HelicopterView().setVisible(true);
+    }//GEN-LAST:event_helicopterbtnActionPerformed
+
+    private void tankbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tankbtnActionPerformed
+        // TODO add your handling code here:
+        new TankView().setVisible(true);
+    }//GEN-LAST:event_tankbtnActionPerformed
+
+    private void submarianbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submarianbtnActionPerformed
+        // TODO add your handling code here:
+        new SubmarianView().setVisible(true);
+    }//GEN-LAST:event_submarianbtnActionPerformed
 
     /**
      * @param args the command line arguments
