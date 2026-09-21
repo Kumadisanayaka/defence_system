@@ -12,6 +12,8 @@ public class MainView extends javax.swing.JFrame {
 
     public MainView() {
         initComponents();
+        setTitle("Main Controller");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -23,21 +25,216 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        mainScrollPane = new javax.swing.JScrollPane();
+        mainTextArea = new javax.swing.JTextArea();
+        dUnitComboBox = new javax.swing.JComboBox<>();
+        collectinfoBtn = new javax.swing.JButton();
+        areaClearCheckBox = new javax.swing.JCheckBox();
+        soldiarCountLbl = new javax.swing.JLabel();
+        soldiarCount = new javax.swing.JLabel();
+        fualAmountLbl = new javax.swing.JLabel();
+        fualAmount = new javax.swing.JLabel();
+        ammoAmountLbl = new javax.swing.JLabel();
+        ammoCount = new javax.swing.JLabel();
+        positionChangeSlider = new javax.swing.JSlider();
+        positionLbl = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        secondTextArea = new javax.swing.JTextArea();
+        sendPrivateCbox = new javax.swing.JCheckBox();
+        sendBtn = new javax.swing.JButton();
+        oxigenAmountLbl = new javax.swing.JLabel();
+        fualAmount1 = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Main Controller");
+        jLabel1.setOpaque(true);
+
+        mainTextArea.setColumns(20);
+        mainTextArea.setRows(5);
+        mainScrollPane.setViewportView(mainTextArea);
+
+        dUnitComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Defence", "Helicopter", "Tank", "Submarian" }));
+
+        collectinfoBtn.setBackground(new java.awt.Color(0, 153, 0));
+        collectinfoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        collectinfoBtn.setText("Collect Infomation");
+        collectinfoBtn.setOpaque(true);
+
+        areaClearCheckBox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        areaClearCheckBox.setText("Area Clear");
+
+        soldiarCountLbl.setText("Soldiar Count :");
+
+        soldiarCount.setText("0");
+
+        fualAmountLbl.setText("Fual Amount :");
+
+        fualAmount.setText("0");
+
+        ammoAmountLbl.setText("Ammo Amount :");
+
+        ammoCount.setText("0");
+
+        positionChangeSlider.setMajorTickSpacing(20);
+        positionChangeSlider.setMinorTickSpacing(20);
+        positionChangeSlider.setPaintLabels(true);
+        positionChangeSlider.setPaintTicks(true);
+        positionChangeSlider.setValue(20);
+
+        positionLbl.setText("Position");
+
+        secondTextArea.setColumns(20);
+        secondTextArea.setRows(5);
+        jScrollPane1.setViewportView(secondTextArea);
+
+        sendPrivateCbox.setText("Send Private");
+        sendPrivateCbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendPrivateCboxActionPerformed(evt);
+            }
+        });
+
+        sendBtn.setBackground(new java.awt.Color(0, 102, 102));
+        sendBtn.setForeground(new java.awt.Color(255, 255, 255));
+        sendBtn.setText("Send");
+
+        oxigenAmountLbl.setText("Oxigen Amount :");
+
+        fualAmount1.setText("0");
+
+        backBtn.setBackground(new java.awt.Color(255, 0, 0));
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(dUnitComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(collectinfoBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(areaClearCheckBox)
+                        .addGap(44, 44, 44))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(mainPanelLayout.createSequentialGroup()
+                                    .addComponent(ammoAmountLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ammoCount, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(soldiarCountLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fualAmountLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(positionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(positionChangeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fualAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(soldiarCount, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addComponent(oxigenAmountLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(fualAmount1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(41, 41, 41)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addComponent(sendPrivateCbox)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(sendBtn)))
+                                .addGap(44, 44, 44))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                .addComponent(backBtn)
+                                .addGap(18, 18, 18))))))
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(mainScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dUnitComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(collectinfoBtn)
+                    .addComponent(areaClearCheckBox))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(soldiarCountLbl)
+                            .addComponent(soldiarCount))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fualAmountLbl)
+                            .addComponent(fualAmount))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(oxigenAmountLbl)
+                            .addComponent(fualAmount1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ammoAmountLbl)
+                            .addComponent(ammoCount))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(positionLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(positionChangeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sendPrivateCbox)
+                            .addComponent(sendBtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(backBtn)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sendPrivateCboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendPrivateCboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sendPrivateCboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -45,5 +242,27 @@ public class MainView extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ammoAmountLbl;
+    private javax.swing.JLabel ammoCount;
+    private javax.swing.JCheckBox areaClearCheckBox;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton collectinfoBtn;
+    private javax.swing.JComboBox<String> dUnitComboBox;
+    private javax.swing.JLabel fualAmount;
+    private javax.swing.JLabel fualAmount1;
+    private javax.swing.JLabel fualAmountLbl;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JScrollPane mainScrollPane;
+    private javax.swing.JTextArea mainTextArea;
+    private javax.swing.JLabel oxigenAmountLbl;
+    private javax.swing.JSlider positionChangeSlider;
+    private javax.swing.JLabel positionLbl;
+    private javax.swing.JTextArea secondTextArea;
+    private javax.swing.JButton sendBtn;
+    private javax.swing.JCheckBox sendPrivateCbox;
+    private javax.swing.JLabel soldiarCount;
+    private javax.swing.JLabel soldiarCountLbl;
     // End of variables declaration//GEN-END:variables
 }
