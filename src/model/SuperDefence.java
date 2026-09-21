@@ -5,6 +5,7 @@ public class SuperDefence {
     private String area;
     private Strength strength;
     private String message;
+    private Observer observer;
 
     public SuperDefence(String area, Strength strength, String message) {
         this.area = area;
@@ -24,6 +25,10 @@ public class SuperDefence {
         this.message = message;
     }
 
+    public void setObserver(Observer observer) {
+        this.observer = observer;
+    }
+
     public String getArea() {
         return area;
     }
@@ -34,6 +39,10 @@ public class SuperDefence {
 
     public String getMessage() {
         return message;
+    }
+
+    public Observer getObserver() {
+        return observer;
     }
     
 }

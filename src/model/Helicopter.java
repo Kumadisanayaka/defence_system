@@ -9,9 +9,9 @@ public class Helicopter extends SuperDefence implements Observable{
     @Override
     public void notifyObserver(String area, Strength strength, String message) {
         
+        Observer observer = getObserver();
+        
+        observer.updateInfo(area, strength, message);
         
     }
-    
-    
-    
 }
