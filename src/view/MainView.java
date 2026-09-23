@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author User
@@ -14,6 +16,8 @@ public class MainView extends javax.swing.JFrame {
         initComponents();
         setTitle("Main Controller");
         setLocationRelativeTo(null);
+        setLocation(300,50);
+        setResizable(false);
     }
 
     /**
@@ -115,6 +119,11 @@ public class MainView extends javax.swing.JFrame {
         backBtn.setBackground(new java.awt.Color(255, 0, 0));
         backBtn.setForeground(new java.awt.Color(255, 255, 255));
         backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -210,7 +219,7 @@ public class MainView extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sendPrivateCbox)
                             .addComponent(sendBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -235,6 +244,11 @@ public class MainView extends javax.swing.JFrame {
     private void sendPrivateCboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendPrivateCboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sendPrivateCboxActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        new HomePage().setVisible(true);
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
