@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author User
@@ -31,11 +34,10 @@ public class HomePage extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        mainControllerbtn = new javax.swing.JButton();
-        helicopterbtn = new javax.swing.JButton();
-        tankbtn = new javax.swing.JButton();
-        submarianbtn = new javax.swing.JButton();
+        startBtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        logo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,43 +53,13 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1.setText("DEFENCE SYSTEM");
         jLabel1.setOpaque(true);
 
-        mainControllerbtn.setBackground(new java.awt.Color(0, 102, 102));
-        mainControllerbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        mainControllerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        mainControllerbtn.setText("Main Controller");
-        mainControllerbtn.addActionListener(new java.awt.event.ActionListener() {
+        startBtn.setBackground(new java.awt.Color(0, 102, 102));
+        startBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        startBtn.setForeground(new java.awt.Color(255, 255, 255));
+        startBtn.setText("Start");
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainControllerbtnActionPerformed(evt);
-            }
-        });
-
-        helicopterbtn.setBackground(new java.awt.Color(0, 102, 102));
-        helicopterbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        helicopterbtn.setForeground(new java.awt.Color(255, 255, 255));
-        helicopterbtn.setText("Helicopter");
-        helicopterbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helicopterbtnActionPerformed(evt);
-            }
-        });
-
-        tankbtn.setBackground(new java.awt.Color(0, 102, 102));
-        tankbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        tankbtn.setForeground(new java.awt.Color(255, 255, 255));
-        tankbtn.setText("Tank");
-        tankbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tankbtnActionPerformed(evt);
-            }
-        });
-
-        submarianbtn.setBackground(new java.awt.Color(0, 102, 102));
-        submarianbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        submarianbtn.setForeground(new java.awt.Color(255, 255, 255));
-        submarianbtn.setText("Submarian");
-        submarianbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submarianbtnActionPerformed(evt);
+                startBtnActionPerformed(evt);
             }
         });
 
@@ -95,6 +67,18 @@ public class HomePage extends javax.swing.JFrame {
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("Exit");
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Central Defense Management ");
+
+        logo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo 3 i.png"))); // NOI18N
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -106,37 +90,40 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                            .addComponent(exitbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(125, 125, 125))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainControllerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(helicopterbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tankbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(submarianbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(97, 97, 97))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logo2)
+                        .addGap(63, 63, 63))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, Short.MAX_VALUE)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mainControllerbtn)
-                .addGap(18, 18, 18)
-                .addComponent(helicopterbtn)
-                .addGap(18, 18, 18)
-                .addComponent(tankbtn)
-                .addGap(18, 18, 18)
-                .addComponent(submarianbtn)
-                .addGap(54, 54, 54)
-                .addComponent(exitbtn)
-                .addGap(24, 24, 24))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addGap(30, 30, 30)
+                        .addComponent(startBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(exitbtn)
+                        .addGap(29, 29, 29)
+                        .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,25 +140,39 @@ public class HomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mainControllerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainControllerbtnActionPerformed
+    private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         // TODO add your handling code here:
-        new MainView().setVisible(true);
-    }//GEN-LAST:event_mainControllerbtnActionPerformed
+        MainView main = new MainView();
+        HelicopterView helicopter = new HelicopterView();
+        TankView tank = new TankView();
+        SubmarianView submarian = new SubmarianView();
 
-    private void helicopterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helicopterbtnActionPerformed
-        // TODO add your handling code here:
-        new HelicopterView().setVisible(true);
-    }//GEN-LAST:event_helicopterbtnActionPerformed
+        // Screen size
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-    private void tankbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tankbtnActionPerformed
-        // TODO add your handling code here:
-        new TankView().setVisible(true);
-    }//GEN-LAST:event_tankbtnActionPerformed
+        // Open windows
+        main.setVisible(true);
+        helicopter.setVisible(true);
+        tank.setVisible(true);
+        submarian.setVisible(true);
 
-    private void submarianbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submarianbtnActionPerformed
+        // Window sizes
+        int w = main.getWidth();
+        int h = main.getHeight();
+
+        // 2 x 2 arrangement
+        main.setLocation(0, 0);
+
+        helicopter.setLocation(w, 0);
+
+        tank.setLocation(0, h);
+
+        submarian.setLocation(w, h);
+    }//GEN-LAST:event_startBtnActionPerformed
+
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         // TODO add your handling code here:
-        new SubmarianView().setVisible(true);
-    }//GEN-LAST:event_submarianbtnActionPerformed
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,12 +211,11 @@ public class HomePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitbtn;
-    private javax.swing.JButton helicopterbtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel logo;
-    private javax.swing.JButton mainControllerbtn;
+    private javax.swing.JLabel logo2;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JButton submarianbtn;
-    private javax.swing.JButton tankbtn;
+    private javax.swing.JButton startBtn;
     // End of variables declaration//GEN-END:variables
 }
