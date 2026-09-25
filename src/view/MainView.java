@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.MainController;
 import java.awt.Dimension;
 
 /**
@@ -11,13 +12,15 @@ import java.awt.Dimension;
  * @author User
  */
 public class MainView extends javax.swing.JFrame {
+    private MainController mainController;
 
-    public MainView() {
+    public MainView(MainController mainController) {
         initComponents();
         setTitle("Main Controller");
         setLocationRelativeTo(null);
         setLocation(300,50);
         setResizable(false);
+        this.mainController = mainController;
     }
 
     /**
@@ -76,6 +79,11 @@ public class MainView extends javax.swing.JFrame {
 
         areaClearCheckBox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         areaClearCheckBox.setText("Area Clear");
+        areaClearCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaClearCheckBoxActionPerformed(evt);
+            }
+        });
 
         soldiarCountLbl.setText("Soldiar Count :");
 
@@ -247,8 +255,15 @@ public class MainView extends javax.swing.JFrame {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        new HomePage().setVisible(true);
+        new HomePage(mainController).setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void areaClearCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_areaClearCheckBoxActionPerformed
+        // TODO add your handling code here:
+        if(areaClearCheckBox.isSelected()){
+            
+        }
+    }//GEN-LAST:event_areaClearCheckBoxActionPerformed
 
     /**
      * @param args the command line arguments
