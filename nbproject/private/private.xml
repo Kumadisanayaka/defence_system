@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Observer.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Observable.java</file>
+            <file>file:/C:/Users/User/ICD121/Defence_System/src/view/Starter.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Tank.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/view/HelicopterView.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/view/TankView.java</file>
@@ -14,7 +15,6 @@
             <file>file:/C:/Users/User/ICD121/Defence_System/src/view/HomePage.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/SuperDefence.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Submarine.java</file>
-            <file>file:/C:/Users/User/ICD121/Defence_System/src/Starter.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Helicopter.java</file>
             <file>file:/C:/Users/User/ICD121/Defence_System/src/model/Strength.java</file>
         </group>
