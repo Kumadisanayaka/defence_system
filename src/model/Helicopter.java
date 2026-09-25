@@ -2,16 +2,18 @@
 package model;
 public class Helicopter extends SuperDefence implements Observable{
 
-    public Helicopter(String area, Strength strength, String message) {
-        super(area, strength, message);
+    public Helicopter() {
+        
+    }
+
+    public Helicopter(boolean area, String message, int soldierCount, int ammoCount, boolean position, Observer observer) {
+        super(area, message, soldierCount, ammoCount, position, observer);
     }
 
     @Override
-    public void notifyObserver(String area, Strength strength, String message) {
+    public void notifyObserver(boolean area, String message, int soldierCount, int ammoCount, boolean position, Observer observer) {
         
-        Observer observer = getObserver();
-        
-        observer.updateInfo(area, strength, message);
-        
+        observer.updateInfo(this, area, message, soldierCount, ammoCount, position);
+
     }
-}
+ }
