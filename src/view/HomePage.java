@@ -1,17 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import controller.MainController;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 
-/**
- *
- * @author User
- */
 public class HomePage extends javax.swing.JFrame {
     private MainController mainController; 
 
@@ -149,10 +139,15 @@ public class HomePage extends javax.swing.JFrame {
         MainView main = new MainView(mainController);
         HelicopterView helicopter = new HelicopterView(mainController);
         TankView tankView = new TankView(mainController);
-        SubmarianView submarian = new SubmarianView();
-
+        SubmarianView submarian = new SubmarianView(mainController);
+        
+        mainController.setHelicopterView(helicopter);
+        mainController.setTankView(tankView);
+        mainController.setSubmarianView(submarian);
+        mainController.setMainView(main);
         // Screen size
-        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+       
+
 
         // Open windows
         main.setVisible(true);
