@@ -1,29 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.MainController;
-import java.awt.Dimension;
+import model.Helicopter;
 
 /**
  *
  * @author User
  */
-public class HelicopterView extends javax.swing.JFrame {
+public final class HelicopterView extends javax.swing.JFrame {
     private MainController mainController;
+    private Helicopter helicopter;
 
     /**
      * Creates new form HelicopterView
+     * @param mainController
      */
-    public HelicopterView(MainController mainController) {
+   public HelicopterView(MainController mainController) {
         initComponents();
+
+        System.out.println("HelicopterView CREATED : " + this);
+
         setTitle("Helicopter");
         setLocationRelativeTo(null);
         setLocation(50,700);
         setResizable(false);
+
         this.mainController = mainController;
+        this.helicopter = mainController.getHelicopter();
+
+        refreshPage();
+        displayMsg();
     }
 
     /**
@@ -54,6 +61,11 @@ public class HelicopterView extends javax.swing.JFrame {
         sendBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         mainPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -84,6 +96,12 @@ public class HelicopterView extends javax.swing.JFrame {
 
         ammoCountLbl.setText("Ammo Count");
 
+        ammoCountSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ammoCountSpinnerStateChanged(evt);
+            }
+        });
+
         positionCheckBox.setText("Position");
 
         fualSlider.setMajorTickSpacing(20);
@@ -110,6 +128,11 @@ public class HelicopterView extends javax.swing.JFrame {
         sendBtn.setBackground(new java.awt.Color(0, 153, 51));
         sendBtn.setForeground(new java.awt.Color(255, 255, 255));
         sendBtn.setText("Send");
+        sendBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -212,6 +235,50 @@ public class HelicopterView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_msgTxtActionPerformed
 
+    private void ammoCountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ammoCountSpinnerStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ammoCountSpinnerStateChanged
+
+    private void sendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendBtnActionPerformed
+        // TODO add your handling code here:
+        String msg = msgTxt.getText();
+        if(!"".equals(msg)){
+            mainTextArea.append("Me : "+msg+"\n");
+            mainController.setUnitMessage(msg, "Helicopter");
+            msgTxt.setText("");
+            
+        }
+    }//GEN-LAST:event_sendBtnActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        mainTextArea.setText("");
+    }//GEN-LAST:event_formWindowOpened
+
+    public void refreshPage() {
+
+        boolean area = helicopter.isArea();
+
+        System.out.println("Area = " + area);
+
+        areaNotClearLbl.setText(
+            area ? "Area Cleared" : "Area Not Cleared"
+        );
+
+        System.out.println(
+            "Actual label text = " + areaNotClearLbl.getText()
+        );
+    }
+    
+    public void displayMsg(){
+        
+        String msg = helicopter.getMessage();
+        
+        if(!"".equals(msg)){
+            mainTextArea.append(msg+"\n");
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
