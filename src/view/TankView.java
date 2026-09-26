@@ -1,29 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.MainController;
-import java.awt.Dimension;
+import model.Tank;
 
-/**
- *
- * @author User
- */
-public class TankView extends javax.swing.JFrame {
+public final class TankView extends javax.swing.JFrame {
     private MainController mainController;
+    private Tank tank;
 
     /**
      * Creates new form HelicopterView
      */
     public TankView(MainController mainController) {
         initComponents();
+        
         setTitle("Tank");
         setLocationRelativeTo(null);
         setLocation(950,700);
         setResizable(false);
+        
         this.mainController = mainController;
+        this.tank = mainController.getTank();
+        
+        refreshPage();
+        displayMsg();
     }
 
     /**
@@ -55,6 +55,11 @@ public class TankView extends javax.swing.JFrame {
         rotateShootingBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         mainPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -218,6 +223,34 @@ public class TankView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_msgTxtActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        mainTextArea.setText("");
+    }//GEN-LAST:event_formWindowOpened
+
+    public void refreshPage() {
+
+        boolean area = tank.isArea();
+
+        System.out.println("Area = " + area);
+
+        areaNotClearLbl.setText(
+            area ? "Area Cleared" : "Area Not Cleared"
+        );
+
+        System.out.println(
+            "Actual label text = " + areaNotClearLbl.getText()
+        );
+    }
+    public void displayMsg(){
+        
+        String msg = tank.getMessage();
+        
+        if(!"".equals(msg)){
+            mainTextArea.append(msg+"\n");
+        }
+        
+     }
     /**
      * @param args the command line arguments
      */
